@@ -11,9 +11,10 @@ import cucumber.api.junit.Cucumber;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/com/mitrais/cucumber/features",
-//		features = "src/test/java/com/mitrais/cucumber/features/Login.feature",
-		glue = "LoginDefinition")
+//		features = "src/test/java/com/mitrais/cucumber/features",
+		features = "src/test/java/com/mitrais/cucumber/features/Login.feature",
+		glue = "com.mitrais.cucumber.steps")
+//		glue = "com.mitrais.cucumber.steps.LoginDefinition")
 public class LoginRunner {
 
 }
