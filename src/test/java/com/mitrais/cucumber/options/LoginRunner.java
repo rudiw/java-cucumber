@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 //		features = "src/test/java/com/mitrais/cucumber/features",
 		features = "src/test/java/com/mitrais/cucumber/features/Login.feature",
-		glue = "com.mitrais.cucumber.steps")
+		glue = "com.mitrais.cucumber.steps") // glue is package name!
 //		glue = "com.mitrais.cucumber.steps.LoginDefinition")
 public class LoginRunner {
 

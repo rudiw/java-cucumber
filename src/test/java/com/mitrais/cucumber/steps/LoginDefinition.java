@@ -21,10 +21,11 @@ public class LoginDefinition {
 		System.out.println("onLandingPage");
 	}
 	
-	@When("^User login into application with username and password$")
-	public void doLogin() throws Throwable {
+	@When("^User login into application with \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void doLogin(String upUsername, String upPassword) throws Throwable {
 		//do login
-		System.out.println("doLogin");
+		System.out.println(String.format("doLogin: username '%s' and password '%s'",
+				upUsername, upPassword));
 	}
 	
 	@Then("^Home page is populated$")
@@ -33,10 +34,12 @@ public class LoginDefinition {
 		System.out.println("populatedHomePage");
 	}
 	
-	@And("^Cards are displayed$")
-	public void displayedCards() throws Throwable {
+	@And("^Cards displayed are \"([^\"]*)\"$")
+	public void displayedCards(String upDisplayed) throws Throwable {
 		//validate cards
-		System.out.println("displayedCards");
+		System.out.println(String.format("displayedCards: %s", upDisplayed));
+		
+		System.out.println("");
 	}
-
+	
 }
