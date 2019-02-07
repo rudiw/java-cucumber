@@ -1,7 +1,10 @@
 package com.mitrais.cucumber.steps;
 
+import java.util.List;
+
 import org.junit.runner.RunWith;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -22,7 +25,7 @@ public class LoginDefinition {
 	}
 	
 	@When("^User login into application with \"([^\"]*)\" and \"([^\"]*)\"$")
-	public void doLogin(String upUsername, String upPassword) throws Throwable {
+	public void doLogin(final String upUsername, final String upPassword) throws Throwable {
 		//do login
 		System.out.println(String.format("doLogin: username '%s' and password '%s'",
 				upUsername, upPassword));
@@ -35,11 +38,23 @@ public class LoginDefinition {
 	}
 	
 	@And("^Cards displayed are \"([^\"]*)\"$")
-	public void displayedCards(String upDisplayed) throws Throwable {
+	public void displayedCards(final String upDisplayed) throws Throwable {
 		//validate cards
 		System.out.println(String.format("displayedCards: %s", upDisplayed));
 		
 		System.out.println("");
+	}
+	
+	@When("^User sign up with following details$")
+	public void signUp(final DataTable upData) throws Throwable {
+		final List<List<String>> raw = upData.raw();
+		System.out.println(String.format("raw: %s", raw));
+	}
+	
+	@When("^Users login into application with (.+) and (.+)$")
+	public void doMultipleLogin(final String upUsername, final String upPassword) throws Throwable {
+		System.out.println(String.format("doMultipleLogin: username '%s' and password '%s'",
+				upUsername, upPassword));
 	}
 	
 }
