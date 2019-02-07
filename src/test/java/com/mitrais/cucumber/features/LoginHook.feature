@@ -1,16 +1,10 @@
 Feature: Application Login
 
-#--BACKGROUND--
-#it will be combined with Hook (first) if exists
-Background:
-Given Validate the browser
-When Browser is triggered
-Then Check if browser is started
-
+#no background!
 
 #--SCENARIOS--
 #1
-@SimpleLogin
+@SimpleLoginInWeb
 Scenario: Home page default login
 Given User is on NetBanking landing page
 When User login into application with "rudi" and "123"
@@ -18,7 +12,7 @@ Then Home page is populated
 And Cards displayed are "true"
 
 #2
-@SimpleLogin
+@SimpleLoginInWeb
 Scenario: Home page default login
 Given User is on NetBanking landing page
 When User login into application with "john" and "456"
