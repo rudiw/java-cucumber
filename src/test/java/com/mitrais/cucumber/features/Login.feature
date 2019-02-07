@@ -1,5 +1,13 @@
 Feature: Application Login
 
+#--BACKGROUND--
+Background:
+Given Validate the browser
+When Browser is triggered
+Then Check if browser is started
+
+
+#--SCENARIOS--
 #1
 @SimpleLogin
 Scenario: Home page default login

@@ -16,8 +16,25 @@ import cucumber.api.junit.Cucumber;
  *
  */
 @RunWith(Cucumber.class)
-public class LoginDefinition {
+public class StepDefinition {
 	
+	/* BACKGROUND */
+	@Given("^Validate the browser$")
+	public void validateBrowser() throws Throwable {
+		System.out.println(String.format("Validate browser"));
+	}
+	
+	@When("^Browser is triggered$")
+	public void triggeredBrowser() throws Throwable {
+		System.out.println(String.format("Triggered Browser"));
+	}
+	
+	@Then("^Check if browser is started$")
+	public void isBrowserStarted() throws Throwable {
+		System.out.println(String.format("Browser is started"));
+	}
+	
+	/* SCENARIOS */
 	@Given("^User is on NetBanking landing page$")
 	public void onLandingPage() throws Throwable {
 		//navigate to login page / url
