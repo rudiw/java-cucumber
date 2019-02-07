@@ -12,7 +12,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/java/com/mitrais/cucumber/features/Login.feature",
-		glue = "com.mitrais.cucumber.steps") // glue is package name!
-public class LoginRunner {
+		glue = "com.mitrais.cucumber.steps", // glue is package name!
+		tags = "@SimpleLogin")
+public class SimpleLoginRunner {
 
 }
