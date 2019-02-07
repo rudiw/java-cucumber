@@ -13,7 +13,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = "src/test/java/com/mitrais/cucumber/features/",
 		glue = "com.mitrais.cucumber.steps", // glue is package name!
-		tags = "@Portal")
+		tags = "@Portal",
+		dryRun = true)
 public class LoginPortalRunner {
 
 }

@@ -12,7 +12,15 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/java/com/mitrais/cucumber/features/Login.feature",
-		glue = "com.mitrais.cucumber.steps") // glue is package name!
+		glue = "com.mitrais.cucumber.steps",// glue is package name!
+		plugin = {"pretty",
+				"html:target/cucumber/login",
+				"json:target/cucumber/login/login.json",
+				"junit:target/cucumber/login/login.xml"},
+		dryRun = true,
+		monochrome = true,
+		strict = true
+		) 
 public class LoginRunner {
 
 }
